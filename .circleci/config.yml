@@ -31,6 +31,14 @@ jobs:
     steps:
       - checkout
       - run: echo world
+  environment_variables:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      = run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>\
+             my pipeline number is << pipeline.number >> , the URL of the triggering git branch is \
+             << pipeline.project.git_url >>  and the pipelin project type is << pipeline.project.type >>.
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
