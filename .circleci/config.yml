@@ -36,7 +36,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      = run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>\
+      - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>\
              my pipeline number is << pipeline.number >> , the URL of the triggering git branch is \
              << pipeline.project.git_url >>  and the pipelin project type is << pipeline.project.type >>.
 # Invoke jobs via workflows
