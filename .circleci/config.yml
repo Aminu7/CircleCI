@@ -42,7 +42,6 @@ jobs:
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
-      - run: echo hello world
     steps:
       - checkout
       - run: echo "text to output here" > ~/output.txt
