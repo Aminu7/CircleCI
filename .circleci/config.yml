@@ -65,6 +65,14 @@ jobs:
     <<: *defaults
     steps:
       - print_pipeline_id
+  error_job:
+    <<: *defaults
+    steps:
+      - run: return 1
+      - run: 
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -81,3 +89,4 @@ workflows:
           requires:
             - save_hello_world_output
       - my_job
+      - error_job
